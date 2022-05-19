@@ -1,0 +1,229 @@
+#select-0 .row > * {
+  width: initial !important;
+}
+
+#select-0 .row {
+  justify-content: space-evenly;
+}
+
+#select-0 .col {
+  flex: initial !important;
+}
+
+/* Main */
+
+:root {
+  --level-one: translateZ(2em);
+  --level-two: translateZ(2.5em);
+  --level-three: translateZ(1em);
+  --fw-normal: 400;
+  --fw-bold: 700;
+  --clr: #c7d2e2;
+}
+
+body #select-0 {
+  display: grid;
+  place-items: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+.card {
+  font-size: 5pt;
+  width: 20em;
+}
+
+.card__content {
+  text-align: center;
+  position: relative;
+  padding: 15em 5em;
+  transition: transform 3s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card__content {
+  transform: rotateY(.5turn);
+}
+
+.card__front, .card__back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em 3em;
+  width: 20em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: grid;
+  align-content: center;
+}
+
+.card__front {
+  background-color: var(--clr);
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/fair.jpg);
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: #333;
+}
+
+.card__front::before {
+  content: '';
+  position: absolute;
+  --spacer: 1em;
+  top: var(--spacer);
+  bottom: var(--spacer);
+  left: var(--spacer);
+  right: var(--spacer);
+  border: 3px solid currentColor;
+  transform: var(--level-one);
+}
+
+.card__title {
+  font-size: 6em;
+  transform: var(--level-three);
+  order: 2;
+  text-transform: uppercase;
+}
+
+.card__subtitle {
+  transform: var(--level-two);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 1.25em;
+  font-weight: var(--fw-bold);
+  opacity: .7;
+}
+
+.card__body {
+  transform: var(--level-two);
+  font-size: 1.8em;
+  font-weight: var(--fw-bold);
+  line-height: 1.6;
+}
+
+.card__back {
+  transform: rotateY(.5turn);
+  color: var(--clr);
+  background: radial-gradient(ellipse farthest-corner at right bottom, #8a761d 0%, #6d4f14 8%, #30240c 30%, #4b3c19 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #8b8b8b 0%, #858559 8%, #61532d 25%, #2c230e 62.5%, #30260f 100%);
+}
+
+@media (min-width: 992px) {
+  #select-0 .container {
+    padding: 7em;
+  }
+}
+
+@media (min-width: 1200px) {
+  #select-0 .container {
+    padding: 0em;
+  }
+}
+
+@media (min-width: 1400px) {
+  #select-0 .container {
+    padding: 3em;
+  }
+}
+
+/* checkbox awesome */
+
+.awesome-checkbox {
+  font-size: 0.3pt;
+}
+
+label {
+  position: relative;
+  width: 160em;
+  height: 80em;
+  cursor: pointer;
+}
+
+label input {
+  position: relative;
+  z-index: 1;
+  appearance: none;
+}
+
+label span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 164em;
+  height: 82em;
+  background: #fe0000;
+  border-radius: 80em;
+  transition: 0.5s;
+  box-shadow: 0 15em 25em #fe000066;
+  box-sizing: initial;
+}
+
+label input:checked ~ span {
+  background: #05be05;
+  box-shadow: 0 15em 25em #5be05566;
+}
+
+label span i {
+  top: 5em;
+  left: 5em;
+  position: absolute;
+  width: 72em;
+  height: 72em;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+label input:checked ~ span i {
+  left: 84em;
+}
+
+label input:checked ~ span i::before {
+  box-shadow: 33em 0 0 #05be05;
+  background: #05be05;
+}
+
+label span i::before {
+  content: '';
+  position: absolute;
+  width: 12em;
+  height: 12em;
+  background: #fe0000;
+  top: 22em;
+  left: 14em;
+  border-radius: 50%;
+  box-shadow: 33em 0 0 #fe0000;
+}
+
+label input:checked ~ span i::after {
+  background: #05be05;
+  border-radius: 0em;
+  bottom: 13em;
+  height: 13em;
+  border-bottom-left-radius: 13em;
+  border-bottom-right-radius: 13em;
+}
+
+label span i::after {
+  content: '';
+  position: absolute;
+  bottom: 15em;
+  width: 30em;
+  height: 6em;
+  border-radius: 6em;
+  left: calc(50% - 30em / 2);
+  transition: 0.5s;
+  background: #fe0000;
+}
+
+.carnage {
+  left: -2.7em;
+  top: -2.4em;
+  position: relative;
+}
+
+.iris {
+  position: relative;
+  left: -2.7em;
+  top: -2.4em;
+}
+
